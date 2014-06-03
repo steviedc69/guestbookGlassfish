@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gastenboek</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/js.js"></script>
+        <script src="js/jquery-2.1.0.js"></script>
+    </head>
+    <body>
+        <div style="border-style: solid">
+            <h3>Welkom</h3>
+            <h4>Vergeet niet een berichtje na te laten : </h4>
+            <div id="error" style="color: red">
+                
+            </div>
+            <div id="messages" style="border-style: solid"></div>
+            <div>
+            <form>
+                <p>
+                <label for="name">Naam : </label>
+                <input type="text" id="name">
+                
+                </p>
+                <p>
+                    <label for="message">Bericht : </label>
+                    <textarea id="messages" rows="5" cols="50" ></textarea>    
+                </p>
+                <p>
+                    <button id="submit">Plaats</button>
+                </p>
+            </form>
+        </div>
+            </div>
+    </body>
+</html>
