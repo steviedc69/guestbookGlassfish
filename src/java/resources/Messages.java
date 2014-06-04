@@ -11,6 +11,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Resource;
+import javax.json.JsonObject;
 import javax.persistence.EntityManager;
 import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
@@ -59,15 +60,11 @@ public class Messages {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addMessage(Message message)
     {
-        if(em.find(Message.class, message.getId())!=null)
-        {
-            throw new BadRequestException("Boodschap bestaat al");
-        }
-        
+         
         Set<ConstraintViolation<Message>> violations = validator.validate(message);
         if(!violations.isEmpty())
         {
-            throw new BadRequestException("Boodschap is oncorrect");
+            throw new BadRequestException("Boodschap is incorrect");
         }
         em.persist(message);
         return Response.created(URI.create("/"+message.getId())).build();

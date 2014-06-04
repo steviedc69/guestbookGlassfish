@@ -44,7 +44,7 @@ public class MessageReader implements MessageBodyReader<Message>{
         {
             JsonObject jsonMessage = in.readObject();
             Message message = new Message();
-            message.setId(jsonMessage.getInt("id"));
+            //message.setId(jsonMessage.getInt("id"));
             //message.setDate(new Date(jsonMessage.getJsonNumber("date").longValue()));
             message.setName(jsonMessage.getString("name",null));
             message.setMessage(jsonMessage.getString("message",null));

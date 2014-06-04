@@ -26,7 +26,7 @@ function loadAllMessages(){
                 $("#messages").append(item);
             }
             
-            $("#error").empty();
+           // $("#error").empty();
         }
         else
         {
@@ -39,7 +39,8 @@ function loadAllMessages(){
 function addNewMessage(){
     var message = {};
     message.name = $("#name").val();
-    message.message = $("#message").val();
+    message.message = $('textarea#message').val();
+
     
     var request = new XMLHttpRequest();
     request.open("POST","http://localhost:8080/guestbook/api/messages");
@@ -56,7 +57,7 @@ function addNewMessage(){
         }
         
     };
-    request.setRequestHeader("Content-type","application/json");
-    request.send(JSON.stringify(message));
-   
+    $("#error").text("we zijn hier");
+         request.setRequestHeader("Content-Type","application/json");
+         request.send(JSON.stringify(message));     
 }
